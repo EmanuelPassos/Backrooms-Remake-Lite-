@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BACKROOMS - MANUTENÇÃO</title>
+    <style>
+        :root { --y: #ceb26b; }
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            overflow: hidden; background: #000; 
+            font-family: 'Courier New', monospace; 
+            display: flex; align-items: center; justify-content: center;
+            color: var(--y); text-align: center;
+        }
+
+        .container { padding: 20px; }
+
+        /* EFEITO GLITCH NO TÍTULO */
+        .glitch-title { 
+            font-size: 3rem; 
+            font-weight: 900; 
+            letter-spacing: 15px; 
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            animation: g 0.3s infinite; 
+            text-shadow: 2px 0 #f00, -2px 0 #00f; 
+        }
+
+        @keyframes g { 
+            0%, 100% { transform: translate(0); } 
+            33% { transform: translate(-3px, 2px); } 
+            66% { transform: translate(3px, -2px); } 
+        }
+
+        /* DESCRIÇÃO */
+        .description {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(206,178,107,0.3);
+            padding-top: 20px;
+        }
+
+        .blink { animation: blinker 1.5s linear infinite; color: #fff; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glitch-title">BACKROOMS</div>
+        
+        <div class="description">
+            <p>O JOGO ESTÁ FORA DO AR POR ESTAR SENDO UMA GRANDE ATUALIZAÇÃO.</p>
+            <p>GRÁFICOS MELHORADOS E GAMEPLAY IMERSIVA.</p>
+            <p class="blink">ESPERE QUE AINDA HOJE ATUALIZA.</p>
+        </div>
+    </div>
+
+</body>
+</html>
