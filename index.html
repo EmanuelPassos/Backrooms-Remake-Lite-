@@ -2,38 +2,68 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>BACKROOMS: EMANUEL - REMAKE LITE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BACKROOMS - MANUTENÇÃO</title>
     <style>
         :root { --y: #ceb26b; }
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #000; font-family: 'Courier New', monospace; color: var(--y); }
-        canvas { width: 100%; height: 100%; outline: none; touch-action: none; display: none; }
-        #ui-master { position: fixed; inset: 0; z-index: 500; display: flex; align-items: center; justify-content: center; background: #000; }
-        .glitch-title { font-size: 2.8rem; font-weight: 900; letter-spacing: 12px; animation: g 0.2s infinite; text-shadow: 2px 0 #f00, -2px 0 #00f; text-align: center; }
-        @keyframes g { 0%, 100% { transform: translate(0); } 33% { transform: translate(-2px, 1px); } 66% { transform: translate(2px, -1px); } }
-        .btn-play { margin-top: 40px; padding: 18px 60px; background: transparent; border: 1px solid var(--y); color: var(--y); cursor: pointer; text-transform: uppercase; letter-spacing: 4px; font-weight: bold; }
-        .pix { font-size: 0.7rem; opacity: 0.5; margin-top: 50px; letter-spacing: 2px; }
-        #intro { position: fixed; inset: 0; z-index: 600; background: #000; display: none; align-items: center; justify-content: center; text-align: center; }
-        .t { font-size: 1.5rem; letter-spacing: 6px; opacity: 0; transition: 1.5s ease; }
-        #hud { position: fixed; top: 25px; left: 25px; z-index: 100; display: none; font-size: 0.8rem; opacity: 0.7; pointer-events: none; }
-        #joy-zone { position: fixed; bottom: 60px; left: 60px; width: 120px; height: 120px; z-index: 1000; display: none; touch-action: none; border: 2px solid rgba(206,178,107,0.3); border-radius: 50%; }
-        #joy-knob { width: 50px; height: 50px; background: var(--y); border-radius: 50%; position: absolute; top: 35px; left: 35px; opacity: 0.6; pointer-events: none; }
+        body, html { 
+            margin: 0; padding: 0; width: 100%; height: 100%; 
+            overflow: hidden; background: #000; 
+            font-family: 'Courier New', monospace; 
+            display: flex; align-items: center; justify-content: center;
+            color: var(--y); text-align: center;
+        }
+
+        .container { padding: 20px; }
+
+        /* EFEITO GLITCH NO TÍTULO */
+        .glitch-title { 
+            font-size: 3rem; 
+            font-weight: 900; 
+            letter-spacing: 15px; 
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            animation: g 0.3s infinite; 
+            text-shadow: 2px 0 #f00, -2px 0 #00f; 
+        }
+
+        @keyframes g { 
+            0%, 100% { transform: translate(0); } 
+            33% { transform: translate(-3px, 2px); } 
+            66% { transform: translate(3px, -2px); } 
+        }
+
+        /* DESCRIÇÃO */
+        .description {
+            margin-top: 30px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            letter-spacing: 2px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(206,178,107,0.3);
+            padding-top: 20px;
+        }
+
+        .blink { animation: blinker 1.5s linear infinite; color: #fff; }
+        @keyframes blinker { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <div id="ui-master">
-        <div style="text-align:center;">
-            <div class="glitch-title">BACKROOMS</div>
-            <button class="btn-play" onclick="iniciarTudo()">INICIAR</button>
-            <div class="pix">APOIE O PROJETO (PIX): 16988245522</div>
+    <div class="container">
+        <div class="glitch-title">BACKROOMS</div>
+        
+        <div class="description">
+            <p>O JOGO ESTÁ FORA DO AR POR ESTAR SENDO UMA GRANDE ATUALIZAÇÃO.</p>
+            <p>GRÁFICOS MELHORADOS E GAMEPLAY IMERSIVA.</p>
+            <p class="blink">ESPERE QUE AINDA HOJE ATUALIZA.</p>
         </div>
     </div>
 
-    <div id="intro"><div id="msg" class="t"></div></div>
-    <div id="hud">● REC | USER: EMANUEL<br>FPS: 60 FLUID | LANTERNA: ON</div>
-    <div id="joy-zone"><div id="joy-knob"></div></div>
-    <canvas id="renderCanvas"></canvas>
+</body>
+</html>
 
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
 
